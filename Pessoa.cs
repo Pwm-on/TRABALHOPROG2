@@ -14,6 +14,12 @@
             CPF = cPF;
             this.endereco = endereco;
         }
+
+        public Pessoa(string nome, string cPF)
+        {
+            Nome = nome;
+            CPF = cPF;
+        }
     }
     class Funcionario : Pessoa
     {
@@ -27,6 +33,10 @@
         {
             Salario = salario;
             Perc_Comissao = perc_Comissao;
+        }
+        void CalcularSalario (double comissao, double salario)
+        {
+            salario = 5000 + comissao;
         }
     }
     class Cliente : Pessoa
@@ -46,7 +56,8 @@
     {
         public double CalcularComissao (double Valor)
         {
-            return Valor;
+            double comissao = Valor * 0.03;
+            return comissao;
         }
     }
 }

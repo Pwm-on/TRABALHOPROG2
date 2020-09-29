@@ -2,7 +2,7 @@
 
 namespace TRABALHOPROG2
 {
-    class Endereco
+    public class Endereco
     {
         private 
             string Logradouro, Bairro, Cidade, Estado, CEP;
