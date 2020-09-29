@@ -1,48 +1,44 @@
 ﻿namespace Imobiliaria {
   class Pessoa {
-    private string Nome,
-    CPF;
+    private string nome, cpf;
     private Endereco endereco;
 
     public Pessoa() {}
-    public Pessoa(string nome, string cPF, Endereco endereco) {
-      Nome = nome;
-      CPF = cPF;
+    public Pessoa(string nome, string cpf, Endereco endereco) {
+      this.nome = nome;
+      this.cpf = cpf;
       this.endereco = endereco;
     }
 
-    public Pessoa(string nome, string cPF) {
-      Nome = nome;
-      CPF = cPF;
+    public Pessoa(string nome, string cpf) {
+      this.nome = nome;
+      this.cpf = cpf;
     }
   }
-  class Funcionario: Pessoa {
-    private double Salario,
-    Perc_Comissao;
+  class Funcionario : Pessoa {
+    private double salario, percComissao;
 
     public Funcionario() {}
 
-    public Funcionario(double salario, double perc_Comissao) {
-      Salario = salario;
-      Perc_Comissao = perc_Comissao;
+    public Funcionario(double salario, double percComissao) {
+      this.salario = salario;
+      this.percComissao = percComissao;
     }
     void CalcularSalario(double comissao, double salario) {
       salario = 5000 + comissao;
     }
   }
-  class Cliente: Pessoa {
-    private
-    bool Liberado;
+  class Cliente : Pessoa {
+    private bool liberado;
 
     public Cliente() {}
     public Cliente(bool liberado) {
-      Liberado = liberado;
+      this.liberado = liberado;
     }
   }
-  class Comissao: Funcionario {
-    public double CalcularComissao(double Valor) {
-      double comissao = Valor * 0.03;
-      return comissao;
+  class Comissao : Funcionario {
+    public double CalcularComissao(double valor) {
+      return valor * 0.03;
     }
   }
 }

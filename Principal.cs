@@ -7,10 +7,11 @@ namespace Imobiliaria {
     private static int opcao;
 
     public static void Main() {
-      int opcao;
       Terreno terreninho = new Terreno("Disponível", 1500);
       string disponivel = terreninho.situacao;
       Console.WriteLine(disponivel);
+
+      int opcao;
       do {
         Console.WriteLine("Chaves Imobiliaria");
         Console.WriteLine("----------------------------");
