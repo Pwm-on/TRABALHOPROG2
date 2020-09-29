@@ -25,11 +25,11 @@ namespace Imobiliaria {
       this.cliente = cliente;
     }
     
-    public virtual string imprimir() {
+    public override string imprimir() {
       string str0 = funcionario.imprimir();
       string str1 = imovel.imprimir();
       string str2 = cliente.imprimir();
-      string str = String.Format("Venda: (\n {0},\n {1},\n {2},\n {3},\n {4},\n {5},\n {6}\n)\n",
+      string str = string.Format("Venda: (\n {0},\n {1},\n {2},\n {3},\n {4},\n {5},\n {6}\n)\n",
         this._valorTotal,
         this._comissao,
         this._totalDeParcelas,

@@ -19,7 +19,7 @@
     }
     
     public virtual string imprimir() {
-      string str = String.Format("Pessoa: (\n {0},\n {1},\n)\n",
+      string str = string.Format("Pessoa: (\n {0},\n {1},\n)\n",
         this._nome,
         this._cpf
       );

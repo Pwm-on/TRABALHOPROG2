@@ -10,8 +10,8 @@ namespace Imobiliaria {
       this.liberado = liberado;
     }
     
-    public virtual string imprimir() {
-      string str = String.Format("Venda: (\n {0}\n)\n",
+    public override string imprimir() {
+      string str = string.Format("Venda: (\n {0}\n)\n",
         this.liberado
       );
       return str;

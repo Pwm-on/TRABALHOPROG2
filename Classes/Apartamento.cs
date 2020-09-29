@@ -13,8 +13,8 @@ namespace Imobiliaria {
       this.andar = andar;
     }
 
-    public virtual string imprimir() {
-      string str = String.Format("Apartamento: (\n {0},\n {1}\n)\n",
+    public override string imprimir() {
+      string str = string.Format("Apartamento: (\n {0},\n {1}\n)\n",
         this._condominio,
         this._andar
       );

@@ -13,8 +13,8 @@ namespace Imobiliaria {
       salario = 5000 + comissao;
     }
 
-    public virtual string imprimir() {
-      string str = String.Format("Funcionario: (\n {0},\n {1}\n)\n",
+    public override string imprimir() {
+      string str = string.Format("Funcionario: (\n {0},\n {1}\n)\n",
         this.salario,
         this.percComissao
       );

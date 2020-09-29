@@ -10,12 +10,12 @@ namespace Imobiliaria {
 
     public Casa() {}
 
-    public Casa() {
+    public Casa(double areaConstruida) {
       this.areaConstruida = areaConstruida;
     }
 
-    public virtual string imprimir() {
-      string str = String.Format("Casa: (\n {0}\n)\n",
+    public override string imprimir() {
+      string str = string.Format("Casa: (\n {0}\n)\n",
         this._areaConstruida
       );
       return str;

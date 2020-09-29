@@ -7,5 +7,6 @@ namespace Imobiliaria {
     public void gerarContrato() {
 
     }
+    public virtual string imprimir() { return ""; }
   }
 }

@@ -1,19 +1,26 @@
 namespace Imobiliaria {
   class Terreno: Imovel {
-    public string situacao;
-    public double valor;
-    public Terreno() {}
+    // private string situacao;
+    // private double valor;
+
+    // public string _situacao { get { return this.situacao; } set { this.situacao = value; } }
+    // public double _valor { get { return this.valor; } set { this.valor = value; } }
+
+    // public Terreno() {}
     
-    public Terreno(string situacao, double valor) : base(situacao, valor) {}
+    // public Terreno(string situacao, double valor) {
+    //   this.situacao = situacao;
+    //   this.valor = valor;s
+    // }
 
     public override double CalcularIPTU() {
       return 0.03;
     }
 
-    public virtual string imprimir() {
-      string str = String.Format("Pessoa (\n {0},\n {1},\n)\n",
-        this._nome,
-        this._cpf
+    public override string imprimir() {
+      string str = string.Format("Terreno: (\n {0},\n {1},\n)\n",
+        this._situacao,
+        this._valor
       );
       return str;
     }
