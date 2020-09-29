@@ -15,6 +15,7 @@
       this.cpf = cpf;
     }
   }
+
   class Funcionario : Pessoa {
     private double salario, percComissao;
 
@@ -28,6 +29,7 @@
       salario = 5000 + comissao;
     }
   }
+
   class Cliente : Pessoa {
     private bool liberado;
 
@@ -36,6 +38,7 @@
       this.liberado = liberado;
     }
   }
+  
   class Comissao : Funcionario {
     public double CalcularComissao(double valor) {
       return valor * 0.03;

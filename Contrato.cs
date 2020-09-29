@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Imobiliaria {
   class Contrato {}
-  class Venda: Contrato {
+
+  class Venda : Contrato {
     private double valorTotal, comissao;
     private int totalDeParcelas;
     private string formaPagamento;
