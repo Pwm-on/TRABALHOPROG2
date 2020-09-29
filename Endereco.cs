@@ -1,26 +1,20 @@
 ﻿using System;
 
-namespace TRABALHOPROG2
-{
-    class Endereco
-    {
-        private 
-            string Logradouro, Bairro, Cidade, Estado, CEP;
-            int Numero;
+namespace Imobiliaria {
+  public class Endereco {
+    private string logradouro, bairro, cidade, estado, cep;
+    private int numero;
 
-        public Endereco()
-        {
-        }
+    public Endereco() {}
 
-        public Endereco(string logradouro, string bairro, string cidade, string estado, string cEP, int numero)
-        {
-            Logradouro = logradouro;
-            Bairro = bairro;
-            Cidade = cidade;
-            Estado = estado;
-            CEP = cEP;
-            Numero = numero;
-        }
-
+    public Endereco(string logradouro, string bairro, string cidade, 
+    string estado, string cep, int numero) {
+      this.logradouro = logradouro;
+      this.bairro = bairro;
+      this.cidade = cidade;
+      this.estado = estado;
+      this.cep = cep;
+      this.numero = numero;
     }
+  }
 }

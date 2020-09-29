@@ -1,52 +1,47 @@
-﻿namespace TRABALHOPROG2
-{
-    class Pessoa
-    {
-        private string Nome, CPF;
-        private Endereco endereco;
+﻿namespace Imobiliaria {
+  class Pessoa {
+    private string nome, cpf;
+    private Endereco endereco;
 
-        public Pessoa()
-        {
-        }
-        public Pessoa(string nome, string cPF, Endereco endereco)
-        {
-            Nome = nome;
-            CPF = cPF;
-            this.endereco = endereco;
-        }
+    public Pessoa() {}
+    public Pessoa(string nome, string cpf, Endereco endereco) {
+      this.nome = nome;
+      this.cpf = cpf;
+      this.endereco = endereco;
     }
-    class Funcionario : Pessoa
-    {
-        private double Salario, Perc_Comissao;
 
-        public Funcionario()
-        {
-        }
+    public Pessoa(string nome, string cpf) {
+      this.nome = nome;
+      this.cpf = cpf;
+    }
+  }
 
-        public Funcionario(double salario, double perc_Comissao)
-        {
-            Salario = salario;
-            Perc_Comissao = perc_Comissao;
-        }
-    }
-    class Cliente : Pessoa
-    {
-        private 
-            bool Liberado;
+  class Funcionario : Pessoa {
+    private double salario, percComissao;
 
-        public Cliente()
-        {
-        }
-        public Cliente(bool liberado)
-        {
-            Liberado = liberado;
-        }
+    public Funcionario() {}
+
+    public Funcionario(double salario, double percComissao) {
+      this.salario = salario;
+      this.percComissao = percComissao;
     }
-    class Comissao : Funcionario
-    {
-        public double CalcularComissao (double Valor)
-        {
-            return Valor;
-        }
+    void CalcularSalario(double comissao, double salario) {
+      salario = 5000 + comissao;
     }
+  }
+
+  class Cliente : Pessoa {
+    private bool liberado;
+
+    public Cliente() {}
+    public Cliente(bool liberado) {
+      this.liberado = liberado;
+    }
+  }
+  
+  class Comissao : Funcionario {
+    public double CalcularComissao(double valor) {
+      return valor * 0.03;
+    }
+  }
 }
