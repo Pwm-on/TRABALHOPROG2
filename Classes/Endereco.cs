@@ -25,13 +25,14 @@ namespace Imobiliaria {
     }
 
     public virtual string imprimir() {
-      string str = String.Format("Endereco: (\n {0},\n {1},\n {2},\n {3},\n {4},\n {5},\n {6}\n)\n",
-        this._logradouro,
-        this._bairro,
-        this._cidade,
-        this._estado,
-        this._cep,
-        this._numero
+      string str = string.Join("\n", 
+      "  Endereco: ",
+       $"    Rua: {this._logradouro},",
+       $"    Bairro: {this._bairro},",
+       $"    Cidade: {this._cidade},",
+       $"    Estado: {this._estado},",
+       $"    Cep: {this._cep},",
+       $"    Numero: {this._numero},"
       );
       return str;
     }

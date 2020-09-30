@@ -4,7 +4,11 @@ namespace Imobiliaria {
 
     public Funcionario() {}
 
-    public Funcionario(double salario, double percComissao) {
+    public Funcionario(string cpf, string nome, Endereco endereco, 
+    double salario, double percComissao) {
+      base._cpf = cpf;
+      base._nome = nome;
+      base._endereco = endereco;
       this.salario = salario;
       this.percComissao = percComissao;
     }
@@ -14,9 +18,13 @@ namespace Imobiliaria {
     }
 
     public override string imprimir() {
-      string str = string.Format("Funcionario: (\n {0},\n {1}\n)\n",
-        this.salario,
-        this.percComissao
+      string str0 = base.imprimir();
+      string str = string.Join("\n",
+        "Funcionario: (",
+        $"{str0}",
+        $"  Salario: {this.salario},",
+        $"  Comissão: {this.percComissao},",
+        ");"
       );
       return str;
     }

@@ -8,15 +8,28 @@ namespace Imobiliaria {
 
     public Apartamento() {}
 
-    public Apartamento(string condominio, int andar) {
+    public Apartamento(string condominio, int andar, int quadra, string lote, 
+    string situacao, double area, double valor) {
       this.condominio = condominio;
       this.andar = andar;
+      base._quadra = quadra;
+      base._lote = lote;
+      base._situacao = situacao;
+      base._area = area;
+      base._valor = valor;
     }
 
     public override string imprimir() {
-      string str = string.Format("Apartamento: (\n {0},\n {1}\n)\n",
-        this._condominio,
-        this._andar
+      string str = string.Join("\n",
+        "Apartamento: (",
+        $"  Condominio: {this._condominio}",
+        $"  Andar: {this._andar}",
+        $"  Quadra: {this._quadra}",
+        $"  Lote: {this._lote}",
+        $"  Situação: {this._situacao}",
+        $"  Área: {this._area}",
+        $"  Valor: {this._valor}",
+        ");\n"
       );
       return str;
     }

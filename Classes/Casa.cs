@@ -4,24 +4,28 @@ namespace Imobiliaria {
 
     public double _areaConstruida { get { return this.areaConstruida; } set { this.areaConstruida = value; } }
     
-    // double getValor(double Valor) {
-    //   return Valor;
-    // }
-
     public Casa() {}
 
-    public Casa(double areaConstruida) {
+    public Casa(double areaConstruida, int quadra, string lote, string situacao, 
+    double area, double valor) {
       this.areaConstruida = areaConstruida;
+      base._quadra = quadra;
+      base._lote = lote;
+      base._situacao = situacao;
+      base._area = area;
+      base._valor = valor;
     }
 
     public override string imprimir() {
-      string str = string.Format("Casa: (\n {0},\n {1},\n {2},\n {3},\n {4},\n {5}\n)\n",
-        this._areaConstruida,
-        this._quadra,
-        this._lote,
-        this._situacao,
-        this._area,
-        this._valor
+      string str = string.Join("\n",
+        "Casa: (",
+        $"  Area Construida: {this._areaConstruida}",
+        $"  Quadra: {this._quadra}",
+        $"  Lote: {this._lote}",
+        $"  Situação: {this._situacao}",
+        $"  Área: {this._area}",
+        $"  Valor: {this._valor}",
+        ");\n"
       );
       return str;
 
