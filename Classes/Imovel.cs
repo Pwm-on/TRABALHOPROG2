@@ -4,11 +4,12 @@ using System.Text;
 
 namespace Imobiliaria {
   public abstract class Imovel {
-    public int quadra;
-    public string lote, situacao;
-    public double area, valor;
-    public Endereco endereco;
-
+    private int quadra;
+    private string lote, situacao;
+    private double area, valor;
+    private Endereco endereco;
+    private Cliente cliente;
+    
     public int _quadra { get { return this.quadra; } set { this.quadra = value; } }
     public string _lote { get { return this.lote; } set { this.lote = value; } }
     public string _situacao { get { return this.situacao; } set { this.situacao = value; } }
@@ -22,13 +23,7 @@ namespace Imobiliaria {
       this.valor = valor;
     }
 
-    public virtual string imprimir() {
-      string str = String.Format("Imovel: (\n {0},\n {1},\n)\n",
-        this._situacao,
-        this._valor
-      );
-      return str;
-    }
+    public abstract string imprimir();
 
     public abstract double CalcularIPTU();
   }

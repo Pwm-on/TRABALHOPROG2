@@ -15,10 +15,16 @@ namespace Imobiliaria {
     }
 
     public override string imprimir() {
-      string str = string.Format("Casa: (\n {0}\n)\n",
-        this._areaConstruida
+      string str = string.Format("Casa: (\n {0},\n {1},\n {2},\n {3},\n {4},\n {5}\n)\n",
+        this._areaConstruida,
+        this._quadra,
+        this._lote,
+        this._situacao,
+        this._area,
+        this._valor
       );
       return str;
+
     }
 
     public override double CalcularIPTU() {

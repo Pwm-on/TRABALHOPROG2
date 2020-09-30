@@ -1,7 +1,5 @@
 namespace Imobiliaria {
-  class Comissao : Funcionario {
-    public double CalcularComissao(double valor) {
-      return valor * 0.03;
-    }
+  public interface Comissao {
+    public double CalcularComissao(double valor);
   }
 }

@@ -1,6 +1,7 @@
 namespace Imobiliaria {
   class Cliente : Pessoa {
     private bool liberado;
+    // List<Contrato> contratos =  new List<Contrato>();
 
     public bool _liberado { get { return this.liberado; } set { this.liberado = value; } }
 

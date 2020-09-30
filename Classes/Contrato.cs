@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Imobiliaria {
-  class Contrato {
-    public void gerarContrato() {
-
-    }
-    public virtual string imprimir() { return ""; }
+  public interface Contrato {
+    void gerarContrato();
+    string imprimir();
   }
 }

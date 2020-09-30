@@ -24,8 +24,10 @@ namespace Imobiliaria {
       this.imovel = imovel;
       this.cliente = cliente;
     }
+
+    public void gerarContrato() {}
     
-    public override string imprimir() {
+    public string imprimir() {
       string str0 = funcionario.imprimir();
       string str1 = imovel.imprimir();
       string str2 = cliente.imprimir();
