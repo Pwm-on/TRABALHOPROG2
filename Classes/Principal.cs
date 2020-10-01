@@ -149,11 +149,23 @@ namespace Imobiliaria {
             }
             // Novo apartamento
             if(op2 == 2) {
+              bool cadastro = imob.cadastrarApartamento();
 
+              if(cadastro) {
+                Console.WriteLine("Apartamento cadastrado com sucesso!");
+              } else {
+                Console.WriteLine("Ocorreu um erro no cadastro!");
+              }
             }
             // Novo terreno
             if(op2 == 3) {
+              bool cadastro = imob.cadastrarTerreno();
 
+              if(cadastro) {
+                Console.WriteLine("Terreno cadastrado com sucesso!");
+              } else {
+                Console.WriteLine("Ocorreu um erro no cadastro!");
+              }
             }
           }while(op2 != 0);
         }

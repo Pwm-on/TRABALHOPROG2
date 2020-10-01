@@ -16,19 +16,22 @@ namespace Imobiliaria {
 
       public Imobiliaria() {}
       
+      // Alguns objetos temporários criados para o teste do programa
       public void Iniciar() {
         Endereco endereco0 = new Endereco("Rua Pitanga","Califonia","Californiana","Minas Gerais","2344-34",23);
-        Pessoa pessoa0 = new Pessoa("Jailson Mendes","105678909-67", endereco0);
+        Pessoa pessoa0 = new Pessoa("Alex Mendes","105678909-67", endereco0);
         Cliente cliente0 = new Cliente(pessoa0._cpf,pessoa0._nome,endereco0,false);
         Funcionario funcionario0 = new Funcionario(pessoa0._cpf,pessoa0._nome,endereco0,1000,0.6);
         Casa casa0 = new Casa(200,2," ","Disponivel",200,200000);
-        
+        Apartamento apartamento0 = new Apartamento();
         
         clientes.Add(cliente0);
         funcionarios.Add(funcionario0);
         casas.Add(casa0);
       }
-
+      
+      // Devido a falta de um parâmetro decente com um objeto genérico
+      // esse código irá se repetir
       public void imprimeClientes(List<Cliente> lista) {
         int count = 0;
         foreach (var item in lista) {
@@ -51,6 +54,45 @@ namespace Imobiliaria {
           }
         }
         Console.WriteLine($"Numero de Funcionários: {count}");
+        Console.Write("Digite qualquer tecla para continuar...");
+        Console.ReadLine();
+      }
+
+      public void imprimeCasas(List<Casa> lista) {
+        int count = 0;
+        foreach (var item in lista) {
+          count++;
+          if(item != null) {
+            Console.WriteLine($"{item.imprimir()}");
+          }
+        }
+        Console.WriteLine($"Numero de Casas: {count}");
+        Console.Write("Digite qualquer tecla para continuar...");
+        Console.ReadLine();
+      }
+
+      public void imprimeApartamentos(List<Apartamento> lista) {
+        int count = 0;
+        foreach (var item in lista) {
+          count++;
+          if(item != null) {
+            Console.WriteLine($"{item.imprimir()}");
+          }
+        }
+        Console.WriteLine($"Numero de Casas: {count}");
+        Console.Write("Digite qualquer tecla para continuar...");
+        Console.ReadLine();
+      }
+
+      public void imprimeTerrenos(List<Terreno> lista) {
+        int count = 0;
+        foreach (var item in lista) {
+          count++;
+          if(item != null) {
+            Console.WriteLine($"{item.imprimir()}");
+          }
+        }
+        Console.WriteLine($"Numero de Casas: {count}");
         Console.Write("Digite qualquer tecla para continuar...");
         Console.ReadLine();
       }
@@ -140,7 +182,7 @@ namespace Imobiliaria {
       }
       
       // Devido a falta de um retorno de objeto decente e por Imóvel 
-      // ser uma classe abstrata, impossibilitando a abstração do cadastro,
+      // ser uma classe abstrata, impossibilitando a abstração do cadastro de imóvel,
       // esse trecho de código irá se repetir.
       public bool cadastrarCasa() {
         double areaConstruida, area, valor;;
@@ -182,7 +224,7 @@ namespace Imobiliaria {
         int quadra, andar;
         string lote, situacao, condominio;
 
-        Console.WriteLine("Cadastro de Casa");
+        Console.WriteLine("Cadastro de Apartamento");
 
         Console.Write("Quadra: "); 
         quadra = int.Parse(Console.ReadLine());
@@ -199,14 +241,43 @@ namespace Imobiliaria {
         Console.Write("valor: "); 
         valor = double.Parse(Console.ReadLine());
 
-        // Endereco endereco = this.cadastrarEndereco();
-        // Cliente cliente = this.cadastrarCliente();
+        Console.Write("Condominio: "); 
+        condominio = Console.ReadLine();
 
-        Console.Write("Area construida: "); 
-        areaConstruida = double.Parse(Console.ReadLine());
+        Console.Write("Andar: "); 
+        andar = int.Parse(Console.ReadLine());
 
-        Apartamento apartamento = new Apartamento(areaConstruida,quadra,lote,situacao,area,valor);
+        Apartamento apartamento = new Apartamento(condominio,andar,quadra,lote,situacao,area,valor);
         apartamentos.Add(apartamento);
+        Console.Clear();
+        
+        return true;
+      }
+
+      public bool cadastrarTerreno() {
+        double area, valor;
+        int quadra, andar;
+        string lote, situacao, condominio;
+
+        Console.WriteLine("Cadastro de Terreno");
+
+        Console.Write("Quadra: "); 
+        quadra = int.Parse(Console.ReadLine());
+
+        Console.Write("lote: "); 
+        lote = Console.ReadLine();
+
+        Console.Write("situacao: "); 
+        situacao = Console.ReadLine();
+
+        Console.Write("area: "); 
+        area = double.Parse(Console.ReadLine());
+
+        Console.Write("valor: "); 
+        valor = double.Parse(Console.ReadLine());
+
+        Terreno terreno = new Terreno(quadra,lote,situacao,area,valor);
+        terrenos.Add(terreno);
         Console.Clear();
         
         return true;
